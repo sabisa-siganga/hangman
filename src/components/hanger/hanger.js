@@ -13,6 +13,7 @@ import state10 from "../../images/state10.gif";
 import state11 from "../../images/state11.GIF";
 import { Button } from "react-bootstrap";
 
+// hanger features
 const pictures = [
   state1,
   state2,
