@@ -1,0 +1,56 @@
+// styling of the letters class
+.letters {
+  max-width: 450px;
+  margin: 0 auto;
+
+  // styling of the letter-btn class
+  .letter-btn {
+    font-weight: 500;
+    background: #b24fcb;
+    color: #fff;
+    border: 1px solid #b24fcb;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 20px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+
+    // styling of the letter-btn class on hover
+    &:hover {
+      background: #fff;
+      color: #b24fcb;
+      border: 1px solid #fff;
+    }
+
+    // styling of the correct class
+    &.correct {
+      background: rgb(5, 139, 5);
+      color: #fff;
+      border: 1px solid rgb(5, 139, 5);
+      cursor: not-allowed;
+
+      // // styling of the correct class on hover
+      &:hover {
+        background: rgb(5, 139, 5);
+        color: #fff;
+        border: 1px solid rgb(5, 139, 5);
+      }
+    }
+
+    // styling of the incorrect class
+    &.incorrect {
+      background: rgb(189, 15, 15);
+      color: #fff;
+      cursor: not-allowed;
+      border: 1px solid rgb(189, 15, 15);
+
+      // styling of the incorrect class on hover
+      &:hover {
+        background: rgb(189, 15, 15);
+        color: #fff;
+        border: 1px solid rgb(189, 15, 15);
+      }
+    }
+  }
+}
