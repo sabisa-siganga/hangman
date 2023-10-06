@@ -66,29 +66,27 @@ function Hanger(props) {
         ))}
       </div>
 
-      <div
-        className="game-status pt-5"
-        // Changing the display style when there's no message or vice versa
-        style={successStatusCheck !== "" ? { display: "flex" } : {}}
-      >
-        {/* Checking if the user has won or not then display status message according to the status */}
-        <div className={`status ${successStatusCheck}`}>
-          {successStatusCheck === "game-won" && (
-            <>
-              <h2>Good job</h2>
-            </>
-          )}
-          {successStatusCheck === "game-lost" && (
-            <>
-              <h2>Game over</h2>
-              <h3>Random term: {randomlySelectedTerm}</h3>
-            </>
-          )}
-          <Button className="btn" onClick={restartGame}>
-            <span class="material-symbols-outlined">restart_alt</span>
-          </Button>
+      {successStatusCheck !== "" && (
+        <div className="game-status pt-5">
+          {/* Checking if the user has won or not then display status message according to the status */}
+          <div className={`status ${successStatusCheck}`}>
+            {successStatusCheck === "game-won" && (
+              <>
+                <h2>Good job</h2>
+              </>
+            )}
+            {successStatusCheck === "game-lost" && (
+              <>
+                <h2>Game over</h2>
+                <h3>Random term: {randomlySelectedTerm}</h3>
+              </>
+            )}
+            <Button className="btn" onClick={restartGame}>
+              <span class="material-symbols-outlined">restart_alt</span>
+            </Button>
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }
