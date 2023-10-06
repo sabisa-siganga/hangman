@@ -9,6 +9,7 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+// styling the app class
 .app {
   .app-header {
     display: flex;
@@ -16,6 +17,7 @@ body {
     justify-content: center;
     font-size: 28px;
 
+    // styling the button
     button {
       border: none;
       background: transparent;
@@ -24,6 +26,35 @@ body {
       width: 40px;
       justify-content: center;
       align-items: center;
+    }
+  }
+
+  // styling the display-term class
+  .display-term {
+    padding-top: 30px;
+    margin-bottom: 30px;
+
+    // styling the list
+    ul {
+      padding: 0;
+      margin: 0;
+      display: flex;
+      column-gap: 3px;
+      justify-content: center;
+
+      // styling the list item
+      li {
+        border: 2px solid #3b3b3b;
+        display: inline-flex;
+        font-size: 20px;
+        font-weight: 300;
+        align-items: center;
+        justify-content: center;
+        height: 35px;
+        width: 35px;
+        border-radius: 4px;
+        text-transform: uppercase;
+      }
     }
   }
 }

@@ -1,0 +1,69 @@
+// .game-container
+.game-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  /* styling of the hanger container */
+  .hanger-container {
+    height: 250px;
+    width: 200px;
+    //   border: 1px solid #b9b8b8;
+    position: relative;
+    margin: 0 auto 45px;
+
+    /* styling of images */
+    img {
+      position: absolute;
+    }
+  }
+
+  /* styling of the popup container */
+  .game-status {
+    display: none;
+    justify-content: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 100%;
+    align-items: center;
+    background-color: rgb(0 0 0 / 38%);
+
+    /* styling of the class */
+    .status {
+      border-radius: 5px;
+      box-shadow: 0 15px 10px 3px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      text-align: center;
+      max-height: 201px;
+      width: 100%;
+      max-width: 400px;
+
+      // stying of h2
+      h2 {
+        font-size: 20px;
+      }
+      // stying of h2
+      h3 {
+        font-size: 17px;
+      }
+
+      //   styling of game-won class
+      &.game-won {
+        background: rgb(5, 139, 5);
+        .btn {
+          color: #fff;
+        }
+      }
+
+      //   styling of game-won class
+      &.game-lost {
+        background: rgb(189, 15, 15);
+        .btn {
+          color: #fff;
+        }
+      }
+    }
+  }
+}

@@ -1,15 +1,15 @@
 import React from "react";
-import "./letters.scss";
-import { alphabets } from "../../utilities/utilities";
+import "./alphabets.scss";
+import { alphabets as alphabetList } from "../../utils/alphabets";
 
 /**
  *
  * @param {object} param
  * @returns
  */
-function Letters({ onSelect, correctLetters, incorrectLetters }) {
+function Alphabets({ onTermSelect, validAlphabets, invalidAlphabets }) {
   /**
-   * Accessing the letter on the button
+   * Accessing the alphabet on the button
    * @param {object} event
    * @returns
    */
@@ -20,27 +20,27 @@ function Letters({ onSelect, correctLetters, incorrectLetters }) {
      * checking if the alphabet is included in the correct letters or incorrect letters
      */
     if (
-      correctLetters.includes(innerText.toLowerCase()) ||
-      incorrectLetters.includes(innerText.toLowerCase())
+      validAlphabets.includes(innerText.toLowerCase()) ||
+      invalidAlphabets.includes(innerText.toLowerCase())
     ) {
       return;
     }
 
-    // onSelect pass the selected letter
-    onSelect(innerText);
+    // pass the selected letter
+    onTermSelect(innerText);
   };
 
   return (
-    <div className="letters pb-5">
+    <div className="alphabets pb-5">
       {/* iterating through the alphabets to display alphabet */}
-      {alphabets.map((alphabet, index) => {
+      {alphabetList.map((alphabet, index) => {
         // Displaying the list of alphabets
         return (
           <button
             key={`alphabet-${index}`}
-            className={`letter-btn ${
-              correctLetters.includes(alphabet) ? "correct" : ""
-            } ${incorrectLetters.includes(alphabet) ? "incorrect" : ""}`}
+            className={`alphabet-btn ${
+              validAlphabets.includes(alphabet) ? "valid" : ""
+            } ${invalidAlphabets.includes(alphabet) ? "invalid" : ""}`}
             onClick={onClick}
           >
             {/* converting the alphabet to capital letters */}
@@ -52,4 +52,4 @@ function Letters({ onSelect, correctLetters, incorrectLetters }) {
   );
 }
 
-export default Letters;
+export default Alphabets;

@@ -1,11 +1,11 @@
-import "./help.scss";
+import "./gameRules.scss";
 
 /**
  * Displaying the rules of hangman game
  * @param {object} param
  * @returns
  */
-function Help({ onClose }) {
+function GameRules({ onClose }) {
   const onCloseBtn = () => {
     onClose();
   };
@@ -19,8 +19,8 @@ function Help({ onClose }) {
           <span class="material-symbols-outlined">close</span>
         </button>
 
-        {/* Rules */}
-        <h2>Hangman Game Rules - Help Page</h2>
+        {/* Rules of the hangman game */}
+        <h2>Game Rules</h2>
         <p>
           Welcome to Hangman! Hangman is a classic word-guessing game that can
           be enjoyed with friends and family.
@@ -83,4 +83,4 @@ function Help({ onClose }) {
     </div>
   );
 }
-export default Help;
+export default GameRules;
