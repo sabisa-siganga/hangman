@@ -69,7 +69,7 @@ function Hanger(props) {
       {successStatusCheck !== "" && (
         <div className="game-status pt-5">
           {/* Checking if the user has won or not then display status message according to the status */}
-          <div className={`status ${successStatusCheck}`}>
+          <div className={`victory-status ${successStatusCheck}`}>
             {successStatusCheck === "game-won" && (
               <>
                 <h2>Good job</h2>
