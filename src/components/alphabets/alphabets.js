@@ -20,8 +20,8 @@ function Alphabets({ onTermSelect, validAlphabets, invalidAlphabets }) {
      * checking if the alphabet is included in the correct letters or incorrect letters
      */
     if (
-      validAlphabets.includes(innerText.toLowerCase()) ||
-      invalidAlphabets.includes(innerText.toLowerCase())
+      validAlphabets.includes(innerText) ||
+      invalidAlphabets.includes(innerText)
     ) {
       return;
     }

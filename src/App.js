@@ -19,7 +19,6 @@ function App() {
    */
   const alphabetChecker = useCallback(
     (alphabet) => {
-      console.log("test");
       // checking if the user can still play the game
       if (!canPlay) return;
 
