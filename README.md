@@ -1,7 +1,5 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 ## Available Scripts
 
 In the project directory, you can run:
@@ -11,60 +9,40 @@ In the project directory, you can run:
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Rules of Hangman game
 
-### `npm test`
+Here are the rules to get you started:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Objective:
 
-### `npm run build`
+Guess the hidden word or phrase before the "hangman" figure is completed.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Setup:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. One player thinks of a word or phrase and keeps it a secret.
+2. Draw a series of underscores on paper or a whiteboard, with each
+   underscore representing a letter in the word or phrase.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Guessing Letters:
 
-### `npm run eject`
+3. Players take turns guessing letters one at a time.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+-If the guessed letter is correct, it's filled into its respective position in the word or phrase.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+-If the guessed letter is incorrect, a body part of the "hangman" is drawn (head, body, arms, legs).
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Maximum Guesses:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+6. Typically, players set a limit of 6 incorrect guesses, but you can adjust this to your preference.
 
-## Learn More
+Winning the Game:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+7. The guessing player wins if they guess all letters correctly before the "hangman" figure is completed.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The player who thought of the word or phrase wins if the "hangman" figure is completed.
 
-### Code Splitting
+Ending the Game:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+9.  The game ends when the word is guessed correctly or the "hangman" figure is completed.
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Players can start a new round with a different word
