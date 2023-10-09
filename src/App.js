@@ -16,6 +16,9 @@ function App() {
   const [validAlphabets, setValidAlphabets] = useState([]);
   const [startGame, setStartGame] = useState(false);
 
+  /**
+   * initializing the game to be playable
+   */
   const playGame = () => {
     setStartGame(true);
   };
@@ -158,7 +161,9 @@ function App() {
 
   return (
     <>
+      {/* checking if startGame is not true thus display the home page */}
       {!startGame && <Home playGame={playGame} />}
+      {/* checking if startGame is true thus displaying the game page */}
       {startGame && (
         <div className="app pt-4">
           <header className="app-header">
