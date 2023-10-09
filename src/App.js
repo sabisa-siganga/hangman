@@ -5,6 +5,7 @@ import { randomTerm } from "./utils/alphabets";
 import Alphabets from "./components/alphabets/alphabets";
 import Hanger from "./components/hanger/hanger";
 import { gameStatus } from "./utils/gameStatus";
+import Home from "./components/home/home";
 // randomly selecting the words on the array
 let randomlySelectedTerm = randomTerm();
 
@@ -13,6 +14,11 @@ function App() {
   const [canPlay, setCanPlay] = useState(true);
   const [invalidAlphabets, setInvalidAlphabets] = useState([]);
   const [validAlphabets, setValidAlphabets] = useState([]);
+  const [startGame, setStartGame] = useState(false);
+
+  const playGame = () => {
+    setStartGame(true);
+  };
 
   /**
    * checking the alphabet if is valid or invalid
@@ -151,50 +157,55 @@ function App() {
   };
 
   return (
-    <div className="app pt-4">
-      <header className="app-header">
-        {/* title */}
-        Hangman {/* help button */}
-        <button className="help-btn" onClick={onHelp}>
-          <span className="material-symbols-outlined">help</span>
-        </button>
-      </header>
+    <>
+      {!startGame && <Home playGame={playGame} />}
+      {startGame && (
+        <div className="app pt-4">
+          <header className="app-header">
+            {/* title */}
+            Hangman {/* help button */}
+            <button className="help-btn" onClick={onHelp}>
+              <span className="material-symbols-outlined">help</span>
+            </button>
+          </header>
 
-      {/* iterating through the array of terms to display the term */}
-      <div className="display-term">
-        <ul>
-          {toArray().map((char, index) => {
-            return (
-              <li className="word-letter" key={`word-${index}`}>
-                {/* checking if the word is valid then display the character */}
-                {validAlphabets.includes(char) ? char : ""}
-              </li>
-            );
-          })}
-        </ul>
-      </div>
+          {/* iterating through the array of terms to display the term */}
+          <div className="display-term">
+            <ul>
+              {toArray().map((char, index) => {
+                return (
+                  <li className="word-letter" key={`word-${index}`}>
+                    {/* checking if the word is valid then display the character */}
+                    {validAlphabets.includes(char) ? char : ""}
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
 
-      <Hanger
-        invalidGuesses={invalidAlphabets.length}
-        successStatusCheck={gameStatus(
-          validAlphabets,
-          invalidAlphabets,
-          randomlySelectedTerm
-        )}
-        canStillPlay={canStillPlay}
-        randomlySelectedTerm={randomlySelectedTerm}
-        restartGame={restartGame}
-      />
+          <Hanger
+            invalidGuesses={invalidAlphabets.length}
+            successStatusCheck={gameStatus(
+              validAlphabets,
+              invalidAlphabets,
+              randomlySelectedTerm
+            )}
+            canStillPlay={canStillPlay}
+            randomlySelectedTerm={randomlySelectedTerm}
+            restartGame={restartGame}
+          />
 
-      <Alphabets
-        validAlphabets={validAlphabets}
-        invalidAlphabets={invalidAlphabets}
-        onTermSelect={onTermSelect}
-      />
+          <Alphabets
+            validAlphabets={validAlphabets}
+            invalidAlphabets={invalidAlphabets}
+            onTermSelect={onTermSelect}
+          />
 
-      {/* If help is true, then display the rules of the game */}
-      {help && <GameRules onClose={onClose} />}
-    </div>
+          {/* If help is true, then display the rules of the game */}
+          {help && <GameRules onClose={onClose} />}
+        </div>
+      )}
+    </>
   );
 }
 

@@ -1,0 +1,21 @@
+.home-page {
+  background: #e3caeb;
+  width: 600px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  h2 {
+    font-size: 20px;
+    font-weight: 100;
+  }
+
+  button {
+    border: 1px solid #b24fcb;
+    background: #b24fcb;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+  }
+}
